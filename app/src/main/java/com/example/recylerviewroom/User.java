@@ -1,18 +1,35 @@
 package com.example.recylerviewroom;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "User")
 public class User {
+
+    @PrimaryKey(autoGenerate = true)
+    private  int id;
+   // @ColumnInfo(name = "Ten")
     private String name;
-    private int age;
+    private String age;
     private String phone;
     private String mail;
     private String address;
 
-    public User(String name, int age, String phone, String mail, String address) {
+    public User(String name, String age, String phone, String mail, String address) {
         this.name = name;
         this.age = age;
         this.phone = phone;
         this.mail = mail;
         this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -23,11 +40,11 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
